@@ -4,6 +4,7 @@ defmodule Bolide.Turn do
   schema "turns" do
     belongs_to :game, Bolide.Game
 
+    # has_many :player_turns, Bolide.PlayerTurn
     timestamps()
   end
 

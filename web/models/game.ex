@@ -6,6 +6,9 @@ defmodule Bolide.Game do
     field :map_name, :string
     field :map_variant, :string
 
+    has_many :players, Bolide.Player
+    has_many :turns, Bolide.Turn
+
     timestamps()
   end
 

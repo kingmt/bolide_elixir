@@ -8,6 +8,9 @@ defmodule Bolide.User do
     field :email, :string
     field :desription, :string
 
+    has_many :identities, Bolide.Identity
+    has_many :players, Bolide.Player
+
     timestamps()
   end
 
