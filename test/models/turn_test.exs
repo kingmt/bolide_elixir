@@ -3,7 +3,7 @@ defmodule Bolide.TurnTest do
 
   alias Bolide.Turn
 
-  @valid_attrs %{}
+  @valid_attrs %{game_id: 1, position: 1}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
