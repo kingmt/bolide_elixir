@@ -3,7 +3,8 @@ defmodule Bolide.Repo.Migrations.CreateTurn do
 
   def change do
     create table(:turns) do
-      add :game_id, references(:games, on_delete: :nothing)
+      add :game_id, references(:games, on_delete: :nothing, type: :uuid)
+      add :position, :integer
 
       timestamps()
     end

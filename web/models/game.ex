@@ -1,8 +1,8 @@
 defmodule Bolide.Game do
   use Bolide.Web, :model
 
+  @primary_key {:id, Ecto.UUID, autogenerate: true}
   schema "games" do
-    field :uuid, Ecto.UUID
     field :map_name, :string
     field :map_variant, :string
 
@@ -17,7 +17,7 @@ defmodule Bolide.Game do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:map_name, :map_variant, :uuid])
-    |> validate_required([:map_name, :map_variant, :uuid])
+    |> cast(params, [:map_name, :map_variant])
+    |> validate_required([:map_name, :map_variant])
   end
 end

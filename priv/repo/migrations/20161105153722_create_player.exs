@@ -6,7 +6,7 @@ defmodule Bolide.Repo.Migrations.CreatePlayer do
       add :car_color, :string
       add :sharp_brake_remaining, :integer
       add :user_id, references(:users, on_delete: :nothing)
-      add :game_id, references(:games, on_delete: :nothing)
+      add :game_id, references(:games, on_delete: :nothing, type: :uuid)
 
       timestamps()
     end
