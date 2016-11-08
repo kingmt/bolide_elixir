@@ -8,6 +8,7 @@ defmodule Bolide.Player do
     field :sharp_brake_remaining, :integer
     belongs_to :user, Bolide.User
     belongs_to :game, Bolide.Game
+    has_many :player_turns, Bolide.PlayerTurn
 
     timestamps()
   end
