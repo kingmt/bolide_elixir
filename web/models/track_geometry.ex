@@ -2,6 +2,8 @@ defmodule Bolide.TrackGeometry do
   use Bolide.Web, :model
 
   schema "track_geometry" do
+    # what I really want
+    # field :poly, :polygon
     field :segment_number, :integer
     field :coord_x, :integer
     field :coord_y, :integer
