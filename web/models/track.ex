@@ -3,7 +3,7 @@ defmodule Bolide.Track do
 
   schema "tracks" do
     field :name, :string
-    field :variation, :sting
+    field :variation, :string
 
     timestamps()
   end
