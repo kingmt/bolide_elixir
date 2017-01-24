@@ -4,10 +4,11 @@ defmodule Bolide.Obstacle do
   schema "obstacles" do
     # what I really want
     # field :circle, :circle
-    field :center_x, :integer
-    field :center_y, :integer
+    field :center_x, :float
+    field :center_y, :float
     field :radius, :float
     belongs_to :section, Bolide.Section
+    belongs_to :track, Bolide.Track
 
     timestamps()
   end
@@ -17,7 +18,7 @@ defmodule Bolide.Obstacle do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:section_id, :center_x, :center_y, :radius])
-    |> validate_required([:section_id, :center_x, :center_y, :radius])
+    |> cast(params, [:section_id, :track_id, :center_x, :center_y, :radius])
+    |> validate_required([:section_id, :track_id, :center_x, :center_y, :radius])
   end
 end
