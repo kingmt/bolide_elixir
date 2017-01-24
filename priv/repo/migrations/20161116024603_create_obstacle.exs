@@ -4,7 +4,7 @@ defmodule Bolide.Repo.Migrations.CreateObstacle do
   def change do
     create table(:obstacles) do
       add :track_id, references(:tracks, on_delete: :nothing)
-      add :segment_number, :integer
+      add :section_id, references(:sections, on_delete: :nothing)
       # what I really want
       # add :circle, :circle
       add :center_x, :integer

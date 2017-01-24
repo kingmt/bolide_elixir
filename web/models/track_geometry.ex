@@ -4,10 +4,10 @@ defmodule Bolide.TrackGeometry do
   schema "track_geometry" do
     # what I really want
     # field :poly, :polygon
-    field :segment_number, :integer
     field :coord_x, :integer
     field :coord_y, :integer
     belongs_to :track, Bolide.Track
+    belongs_to :section, Bolide.Section
 
     timestamps()
   end
@@ -17,7 +17,7 @@ defmodule Bolide.TrackGeometry do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:segment_number, :coord_x, :coord_y, :track_id])
-    |> validate_required([:segment_number, :coord_x, :coord_y, :track_id])
+    |> cast(params, [:section_id, :coord_x, :coord_y, :track_id])
+    |> validate_required([:section_id, :coord_x, :coord_y, :track_id])
   end
 end

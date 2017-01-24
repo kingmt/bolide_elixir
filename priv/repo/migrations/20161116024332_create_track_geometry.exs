@@ -4,7 +4,7 @@ defmodule Bolide.Repo.Migrations.CreateTrackGeometry do
   def change do
     create table(:track_geometry) do
       add :track_id, references(:tracks, on_delete: :nothing)
-      add :segment_number, :integer
+      add :section_id, references(:sections, on_delete: :nothing)
       # what I really want
       # add :poly, :polygon
       add :coord_x, :integer

@@ -2,12 +2,12 @@ defmodule Bolide.Obstacle do
   use Bolide.Web, :model
 
   schema "obstacles" do
-    field :segment_number, :integer
     # what I really want
     # field :circle, :circle
     field :center_x, :integer
     field :center_y, :integer
     field :radius, :float
+    belongs_to :section, Bolide.Section
 
     timestamps()
   end
@@ -17,7 +17,7 @@ defmodule Bolide.Obstacle do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:segment_number, :center_x, :center_y, :radius])
-    |> validate_required([:segment_number, :center_x, :center_y, :radius])
+    |> cast(params, [:section_id, :center_x, :center_y, :radius])
+    |> validate_required([:section_id, :center_x, :center_y, :radius])
   end
 end
