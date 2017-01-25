@@ -1,9 +1,10 @@
 defmodule Bolide.Repo.Migrations.CreateSection do
   use Ecto.Migration
 
-  def change do
+  def up do
+    DirectionEnum.create_type
     create table(:sections) do
-      add :direction_of_travel, :string
+      add :direction_of_travel, :direction
       add :name, :string
       # what I really want
       # add :center_point, :point
@@ -15,5 +16,10 @@ defmodule Bolide.Repo.Migrations.CreateSection do
     end
     create index(:sections, [:track_id])
 
+  end
+
+  def down do
+    drop table(:sections)
+    DirectionEnum.drop_type
   end
 end
