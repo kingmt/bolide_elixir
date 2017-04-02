@@ -1,0 +1,2 @@
+defmodule Movement.PawnLocations do
+
